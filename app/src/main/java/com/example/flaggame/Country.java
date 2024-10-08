@@ -1,27 +1,31 @@
 package com.example.flaggame;
 
+import android.content.Context;
+
 public class Country {
     private String name;
-    private String imageUrl;
+    private int imageInt;
+    private Context context;
 
-    public Country(String name, String imageUrl) {
-        this.name = name;
-        this.imageUrl = imageUrl;
+    public Country(Context context, int imageInt) {
+        this.context = context;
+        this.imageInt = imageInt;
+        this.name = this.getName();
     }
 
-    public String getName() {
+    private String getName() {
+        String resourceName = context.getResources().getResourceEntryName(imageInt);
+
+
+        return resourceName.replace("flag_of_", "").toUpperCase();
+    }
+
+    public String getCountryName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public int getImageInt() {
+        return imageInt;
     }
 }
+
