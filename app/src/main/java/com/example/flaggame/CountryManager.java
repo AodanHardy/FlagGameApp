@@ -6,30 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/*
-example usage
-    FlagManager manager = new FlagManager(this);
 
-    Country country = manager.getRandomCountry();
-
-
-    ImageView imageView = findViewById(R.id.imageView2);
-
-    imageView.setImageResource(country.getImageInt());
-
-
-
-    TextView textView = findViewById(R.id.textView);
-    textView.setText(country.getCountryName());
-
- */
-
-public class FlagManager {
+public class CountryManager {
     private final Context context;
     private List<Country> countries;
     private final Random random = new Random();
 
-    public FlagManager(Context context) {
+    public CountryManager(Context context) {
         this.context = context;
         this.countries = getCountries();
     }

@@ -32,10 +32,10 @@ public class GuessTheCountryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_guess_the_country);
 
         // Init flag manager
-        FlagManager flagManager = new FlagManager(this);
+        CountryManager countryManager = new CountryManager(this);
 
         // populate list with countries in random order
-        randomOrderCountryList = flagManager.getRandomList(NUM_OF_COUNTRIES);
+        randomOrderCountryList = countryManager.getRandomList(NUM_OF_COUNTRIES);
 
         // setting imageview and btn
         imageView = findViewById(R.id.guessTheCountryImageView);
@@ -45,7 +45,7 @@ public class GuessTheCountryActivity extends AppCompatActivity {
 
         // Setting up spinner
         countriesSpinner = findViewById(R.id.guessTheCountrySpinner);
-        List<String> countryNames = flagManager.getCountryNames();
+        List<String> countryNames = countryManager.getCountryNames();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, countryNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
