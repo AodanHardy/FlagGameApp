@@ -4,10 +4,12 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class FlagManager {
-    private Context context;
+    private final Context context;
     private List<Country> countries;
+    private final Random random = new Random();
 
     public FlagManager(Context context) {
         this.context = context;
@@ -15,10 +17,23 @@ public class FlagManager {
     }
 
 
-    public void getRandomCountry(){
+    public Country getRandomCountry() {
+        int randomIndex = random.nextInt(countries.size());
+        return countries.get(randomIndex);
     }
 
-    public void getRandomList(int numberOfCountries){}
+    public List<Country> getRandomList(int numberOfCountries){
+        List<Country> randCountries = new ArrayList<>();
+
+        for (int i = 0; i < numberOfCountries; i++){
+            Country newCountry = this.getRandomCountry();
+            if (!randCountries.contains(newCountry)){
+                randCountries.add(newCountry);
+            }
+            else i--;
+        }
+        return randCountries;
+    }
 
 
 
