@@ -14,20 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FlagManager manager = new FlagManager(this);
-
-        Country country = manager.getRandomCountry();
-
-
-        ImageView imageView = findViewById(R.id.imageView2);
-
-        imageView.setImageResource(country.getImageInt());
-
-
-
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(country.getCountryName());
-
 
     }
 }

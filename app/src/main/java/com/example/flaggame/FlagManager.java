@@ -6,6 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/*
+example usage
+    FlagManager manager = new FlagManager(this);
+
+    Country country = manager.getRandomCountry();
+
+
+    ImageView imageView = findViewById(R.id.imageView2);
+
+    imageView.setImageResource(country.getImageInt());
+
+
+
+    TextView textView = findViewById(R.id.textView);
+    textView.setText(country.getCountryName());
+
+ */
+
 public class FlagManager {
     private final Context context;
     private List<Country> countries;

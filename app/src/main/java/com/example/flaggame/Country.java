@@ -15,8 +15,6 @@ public class Country {
 
     private String getName() {
         String resourceName = context.getResources().getResourceEntryName(imageInt);
-
-
         return resourceName.replace("flag_of_", "").toUpperCase();
     }
 
