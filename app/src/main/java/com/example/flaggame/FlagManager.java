@@ -53,7 +53,13 @@ public class FlagManager {
         return randCountries;
     }
 
-
+    public List<String> getCountryNames(){
+        List<String> names = new ArrayList<>();
+        for (Country country : this.countries){
+            names.add(country.getCountryName());
+        }
+        return names;
+    }
 
     private List<Country> getCountries(){
         List<Country> fetchedCounties = new ArrayList<>();

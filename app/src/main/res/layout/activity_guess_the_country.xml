@@ -6,4 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".GuessTheCountryActivity">
 
+    <ImageView
+        android:id="@+id/guessTheCountryImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/guessTheCountrySpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/guessTheCountrySubmitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheCountryCorrectAnswerTextView" />
+
+    <Spinner
+        android:id="@+id/guessTheCountrySpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="61dp"
+        app:layout_constraintBottom_toTopOf="@+id/guessTheCountryCorrectAnswerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheCountryImageView" />
+
+    <TextView
+        android:id="@+id/guessTheCountryCorrectAnswerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:textColor="#C80606"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guessTheCountryCorrectAnswerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheCountrySpinner" />
+
+    <TextView
+        android:id="@+id/guessTheCountryCorrectAnswerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="78dp"
+        android:textColor="#4CAF50"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guessTheCountrySubmitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheCountryCorrectAnswerText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
