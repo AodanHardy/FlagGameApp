@@ -10,7 +10,7 @@ import android.widget.Button;
 public class NewCountryGameActivity extends AppCompatActivity {
     Button guessTheCountryBtn;
     Button guessHintsBtn;
-    Button guessTheFlag;
+    Button guessTheFlagBtn;
     Button advancedLvlBtn;
 
     @Override
@@ -34,6 +34,16 @@ public class NewCountryGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NewCountryGameActivity.this, GuessHintsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        guessTheFlagBtn = findViewById(R.id.guessTheFlagBtn);
+        guessTheFlagBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewCountryGameActivity.this, GuessTheFlagActivity.class);
                 startActivity(intent);
             }
         });
