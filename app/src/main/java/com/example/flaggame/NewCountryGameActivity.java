@@ -47,6 +47,16 @@ public class NewCountryGameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        advancedLvlBtn = findViewById(R.id.advancedLevelBtn);
+        advancedLvlBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewCountryGameActivity.this, AdvancedLevelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
