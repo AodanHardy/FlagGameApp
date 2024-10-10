@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdvancedLevelActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <ImageView
+      android:id="@+id/advancedLvlImg1"
+      android:layout_width="200dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="24dp"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlTxt1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:srcCompat="@tools:sample/avatars" />
+
+  <EditText
+      android:id="@+id/advancedLvlTxt1"
+      android:layout_width="202dp"
+      android:layout_height="47dp"
+      android:layout_marginBottom="5dp"
+      android:ems="10"
+      android:inputType="text"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlImg2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlImg1" />
+
+  <ImageView
+      android:id="@+id/advancedLvlImg2"
+      android:layout_width="200dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlTxt2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlTxt1"
+      tools:srcCompat="@tools:sample/avatars" />
+
+  <EditText
+      android:id="@+id/advancedLvlTxt2"
+      android:layout_width="202dp"
+      android:layout_height="47dp"
+      android:layout_marginBottom="7dp"
+      android:ems="10"
+      android:inputType="text"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlImg3"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlImg2" />
+
+  <ImageView
+      android:id="@+id/advancedLvlImg3"
+      android:layout_width="200dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlTxt3"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlTxt2"
+      tools:srcCompat="@tools:sample/avatars" />
+
+  <EditText
+      android:id="@+id/advancedLvlTxt3"
+      android:layout_width="201dp"
+      android:layout_height="46dp"
+      android:layout_marginBottom="122dp"
+      android:ems="10"
+      android:inputType="text"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlSubmitBtn"
+      app:layout_constraintEnd_toEndOf="@+id/advancedLvlImg3"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlImg3" />
+
+  <Button
+      android:id="@+id/advancedLvlSubmitBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="30dp"
+      android:text="Submit"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/advancedLvlTxt3" />
+
+  <TextView
+      android:id="@+id/advancedLvlWarningTxt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="#CC0909"
+      android:textSize="24sp"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlCorrectTxt"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <TextView
+      android:id="@+id/advancedLvlCorrectTxt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="20dp"
+      android:textColor="#4CAF50"
+      android:textSize="24sp"
+      app:layout_constraintBottom_toTopOf="@+id/advancedLvlSubmitBtn"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
