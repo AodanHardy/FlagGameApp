@@ -1,36 +1,28 @@
 package com.example.flaggame;
 
+import static com.example.flaggame.Constants.GREEN;
+import static com.example.flaggame.Constants.RED;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.awt.font.TextAttribute;
 import java.util.List;
 import java.util.Random;
 
 public class GuessTheFlagActivity extends AppCompatActivity {
-
     private List<Country> countryList;
     private Country correctCountry;
     private CountryManager countryManager;
-
     private final Random random = new Random();
-
-
-    private TextView correctAnswerTextView;
-    private TextView winMsgTxt;
-    private TextView loseMsgTxt;
-    private ImageView imageView1;
-    private ImageView imageView2;
-    private ImageView imageView3;
-    private Button nextBtn;
-
+    private TextView correctAnswerTextView, msgTextView;
+    private ImageView imageView1, imageView2, imageView3;
     private boolean roundEnded;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +32,13 @@ public class GuessTheFlagActivity extends AppCompatActivity {
         countryManager = new CountryManager(this);
 
         correctAnswerTextView = findViewById(R.id.guessTheFlagCorrectAnswerTextView);
-        winMsgTxt = findViewById(R.id.guessTheFlagWinMsgTxt);
-        loseMsgTxt = findViewById(R.id.guessTheFlagLoseMsgTxt);
+        msgTextView = findViewById(R.id.guessTheFlagMsgTxt);
 
         imageView1 = findViewById(R.id.guessTheFlagImg1);
         imageView2 = findViewById(R.id.guessTheFlagImg2);
         imageView3 = findViewById(R.id.guessTheFlagImg3);
 
-        nextBtn = findViewById(R.id.guessTheFlagNextBtn);
+        Button nextBtn = findViewById(R.id.guessTheFlagNextBtn);
 
         gameSetUp();
 
@@ -99,8 +90,7 @@ public class GuessTheFlagActivity extends AppCompatActivity {
         roundEnded = false;
 
         // Clear warnings
-        loseMsgTxt.setText("");
-        winMsgTxt.setText("");
+        msgTextView.setText("");
 
         // getting list of three random countries
         this.countryList = countryManager.getRandomList(3);
@@ -113,16 +103,16 @@ public class GuessTheFlagActivity extends AppCompatActivity {
         imageView1.setImageResource(countryList.get(0).getImageInt());
         imageView2.setImageResource(countryList.get(1).getImageInt());
         imageView3.setImageResource(countryList.get(2).getImageInt());
-
-
     }
 
     private void checkAnswer(Country guessedCountry){
         if (guessedCountry.equals(this.correctCountry)){
-            this.winMsgTxt.setText("CORRECT!");
+            this.msgTextView.setTextColor(Color.parseColor(GREEN));
+            this.msgTextView.setText("CORRECT!");
         }
         else {
-            this.loseMsgTxt.setText("WRONG!");
+            this.msgTextView.setTextColor(Color.parseColor(RED));
+            this.msgTextView.setText("WRONG!");
         }
     }
 }
