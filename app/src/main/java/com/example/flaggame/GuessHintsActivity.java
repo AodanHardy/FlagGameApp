@@ -21,7 +21,7 @@ public class GuessHintsActivity extends AppCompatActivity {
     CountryManager countryManager;
     private List<Country> countryList;
     private ImageView flagImage;
-    private TextView guessTextView, livesTextView, msgTextView;
+    private TextView guessTextView, livesTextView, msgTextView, correctAnsMsgTextView;
     private Button submitBtn, backBtn;
     private EditText guessField;
     private String roundCountryName, guessedCountryName;
@@ -43,10 +43,9 @@ public class GuessHintsActivity extends AppCompatActivity {
         this.guessField = findViewById(R.id.guessHintTextField);
         this.livesTextView = findViewById(R.id.guessHintsLivesTxt);
         this.msgTextView = findViewById(R.id.guessedHintMsgTxt);
-
+        this.correctAnsMsgTextView = findViewById(R.id.guessHintsCorrectAnsTxt);
 
         this.newRoundRefresh();
-
 
         // Back Button
         backBtn = findViewById(R.id.guessHintsBackBtn);
@@ -64,19 +63,16 @@ public class GuessHintsActivity extends AppCompatActivity {
                 if (roundFinished){
                     newRoundRefresh();
                 }
-
-                // retrive guess
+                // retrieve guess
                 String guess = guessField.getText().toString();
 
                 // check if guess is valid and convert to char
                 if (isValidGuess(guess)){
                     char cGuess = guess.charAt(0);
-
                     // pass to method that will return true if char exists in
                     if (makeGuess(cGuess)){
                         // if it exists, pass to method that will replace "-" with char
                         replaceTemplateWithCorrectGuess(cGuess);
-
                         // check is round is won
                         if (checkIfWon()){
                             win();
@@ -93,12 +89,8 @@ public class GuessHintsActivity extends AppCompatActivity {
                     }
                     refreshGuess();
                 }
-
-
             }
         });
-
-
     }
 
     private void newRoundRefresh(){
@@ -116,7 +108,9 @@ public class GuessHintsActivity extends AppCompatActivity {
 
         //reset messages
         this.msgTextView.setText("");
+        this.correctAnsMsgTextView.setText("");
 
+        // reset variables
         this.roundCountryName = roundCountry.getCountryName();
         this.guessedCountryName = getEmptyCountryName();
         this.guessTextView.setText(guessedCountryName);
@@ -184,7 +178,8 @@ public class GuessHintsActivity extends AppCompatActivity {
 
     private void fail(){
         this.msgTextView.setTextColor(Color.parseColor(RED));
-        this.msgTextView.setText("WRONG! The correct answer is " + roundCountryName);
+        this.msgTextView.setText("WRONG!");
+        this.correctAnsMsgTextView.setText("The correct answer is " + roundCountryName);
 
     }
 
