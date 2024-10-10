@@ -7,5 +7,10 @@ public class Constants {
     public static final String RED = "#FF0000";
     public static final String GREY = "#808080";
     public static final String BLACK = "#000000";
+    public static final String GREEN = "#008000";
+
+
+
+
 
 }
