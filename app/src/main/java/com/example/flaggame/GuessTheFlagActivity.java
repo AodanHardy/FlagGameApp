@@ -5,6 +5,7 @@ import static com.example.flaggame.Constants.RED;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class GuessTheFlagActivity extends AppCompatActivity {
     private TextView correctAnswerTextView, msgTextView;
     private ImageView imageView1, imageView2, imageView3;
     private boolean roundEnded;
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,16 @@ public class GuessTheFlagActivity extends AppCompatActivity {
 
         gameSetUp();
 
+
+        // Back button
+        backBtn = findViewById(R.id.guessTheFlagBackBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GuessTheFlagActivity.this, NewCountryGameActivity.class);
+                startActivity(intent);
+            }
+        });
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

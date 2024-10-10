@@ -6,6 +6,7 @@ import static com.example.flaggame.Constants.RED;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ public class GuessHintsActivity extends AppCompatActivity {
     private List<Country> countryList;
     private ImageView flagImage;
     private TextView guessTextView, livesTextView, msgTextView;
-    private Button submitBtn;
+    private Button submitBtn, backBtn;
     private EditText guessField;
     private String roundCountryName, guessedCountryName;
     private int lives;
@@ -47,6 +48,15 @@ public class GuessHintsActivity extends AppCompatActivity {
         this.newRoundRefresh();
 
 
+        // Back Button
+        backBtn = findViewById(R.id.guessHintsBackBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GuessHintsActivity.this, NewCountryGameActivity.class);
+                startActivity(intent);
+            }
+        });
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override

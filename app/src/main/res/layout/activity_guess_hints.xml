@@ -89,4 +89,19 @@
         app:layout_constraintTop_toBottomOf="@+id/guessHintSubmitbtn"
         app:layout_constraintVertical_bias="0.0" />
 
+
+    <Button
+        android:id="@+id/guessHintsBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/arrow"
+        android:drawablePadding="8dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

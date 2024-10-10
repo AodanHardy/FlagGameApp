@@ -8,16 +8,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class NewCountryGameActivity extends AppCompatActivity {
-    Button guessTheCountryBtn;
-    Button guessHintsBtn;
-    Button guessTheFlagBtn;
-    Button advancedLvlBtn;
-
+    Button guessTheCountryBtn, guessHintsBtn, guessTheFlagBtn, advancedLvlBtn, backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_country_game);
 
+
+        backBtn = findViewById(R.id.newCountryBackBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewCountryGameActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         guessTheCountryBtn = findViewById(R.id.guessTheCountryBtn);
         guessTheCountryBtn.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +32,7 @@ public class NewCountryGameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         guessHintsBtn = findViewById(R.id.guessHintsBtn);

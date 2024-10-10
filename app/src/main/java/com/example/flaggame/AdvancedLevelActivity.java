@@ -7,6 +7,7 @@ import static com.example.flaggame.Constants.RED;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
     private ImageView image1, image2, image3;
     private EditText textBox1, textBox2,textBox3;
     private boolean q1Correct, q2Correct, q3Correct, isRoundComplete;
-    private Button submitBtn;
+    private Button submitBtn, backBtn;
     private TextView scoreTxt, correctTxt;
 
     private List<Country> roundCountries;
@@ -49,6 +50,15 @@ public class AdvancedLevelActivity extends AppCompatActivity {
 
         gameSetUp();
 
+        // Back Button
+        backBtn = findViewById(R.id.advancedLvlBackBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdvancedLevelActivity.this, NewCountryGameActivity.class);
+                startActivity(intent);
+            }
+        });
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
