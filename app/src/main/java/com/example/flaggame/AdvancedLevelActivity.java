@@ -1,6 +1,7 @@
 package com.example.flaggame;
 
 import static com.example.flaggame.Constants.BLACK;
+import static com.example.flaggame.Constants.BLUE;
 import static com.example.flaggame.Constants.GREEN;
 import static com.example.flaggame.Constants.GREY;
 import static com.example.flaggame.Constants.RED;
@@ -72,6 +73,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
                     if (roundAttempts == NUM_ALLOWED_ATTEMPTS) {
                         // give warning that round is over
                         completeRound("Too Many Incorect Attempts", RED);
+
                     } else {
                         // check answers
                         q1Correct = checkAnswer(roundCountries.get(0), textBox1);
@@ -142,14 +144,31 @@ public class AdvancedLevelActivity extends AppCompatActivity {
     }
 
     private void completeRound(String message, String colour){
+        // check if answer is correct, if so add to score,
+        // if not - call setEditTextIncorrect
         if (q1Correct)roundScore++;
+        else setEditTextIncorrect(textBox1, roundCountries.get(0).getCountryName());
+
         if (q2Correct)roundScore++;
+        else setEditTextIncorrect(textBox2, roundCountries.get(1).getCountryName());
+
         if (q3Correct)roundScore++;
+        else setEditTextIncorrect(textBox3, roundCountries.get(2).getCountryName());
 
         isRoundComplete = true;
         submitBtn.setText("Next");
         scoreTxt.setText("Your Score is: " + this.roundScore);
         correctTxt.setText(message);
         correctTxt.setTextColor(Color.parseColor(colour));
+    }
+
+    /** setEditTextIncorrect is called once
+     * @param editText to change.
+     * @param correctAns to replace wrong answer.
+     */
+    private void setEditTextIncorrect(EditText editText,String correctAns){
+        editText.setTextColor(Color.parseColor(BLUE));
+        editText.setText(correctAns);
+        editText.setEnabled(false);
     }
 }
