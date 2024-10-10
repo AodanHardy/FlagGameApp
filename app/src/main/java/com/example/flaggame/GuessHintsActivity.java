@@ -20,12 +20,10 @@ public class GuessHintsActivity extends AppCompatActivity {
     CountryManager countryManager;
     private List<Country> countryList;
     private ImageView flagImage;
-    private TextView guessTextView, livesTextView;
-    private TextView msgTextView;
+    private TextView guessTextView, livesTextView, msgTextView;
     private Button submitBtn;
     private EditText guessField;
-    private String roundCountryName;
-    private String guessedCountryName;
+    private String roundCountryName, guessedCountryName;
     private int lives;
     private boolean roundFinished;
 
