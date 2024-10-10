@@ -129,7 +129,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
             // disable edit text
             editText.setEnabled(false);
             // Change colour in case its still red
-            editText.setTextColor(Color.parseColor(GREY));
+            editText.setTextColor(Color.parseColor(GREEN));
 
             // return true
             return true;
