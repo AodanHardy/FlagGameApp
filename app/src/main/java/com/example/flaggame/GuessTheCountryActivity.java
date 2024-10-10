@@ -1,9 +1,12 @@
 package com.example.flaggame;
 
+import static com.example.flaggame.Constants.GREEN;
 import static com.example.flaggame.Constants.NUM_OF_COUNTRIES;
+import static com.example.flaggame.Constants.RED;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,8 +24,7 @@ public class GuessTheCountryActivity extends AppCompatActivity {
     private boolean isAnswered = false;
     private List<Country> randomOrderCountryList;
     private ImageView imageView;
-    private TextView warningTextView;
-    private TextView correctAnswerTextView;
+    private TextView answerLabelTextView;
     private Button submitOrNextBtn;
     private Spinner countriesSpinner;
 
@@ -40,8 +42,7 @@ public class GuessTheCountryActivity extends AppCompatActivity {
         // setting imageview and btn
         imageView = findViewById(R.id.guessTheCountryImageView);
         submitOrNextBtn = findViewById(R.id.guessTheCountrySubmitBtn);
-        warningTextView = findViewById(R.id.guessTheCountryCorrectAnswerText);
-        correctAnswerTextView = findViewById(R.id.guessTheCountryCorrectAnswerTextView);
+        answerLabelTextView = findViewById(R.id.guessTheCountryCorrectAnswerTextView);
 
         // Setting up spinner
         countriesSpinner = findViewById(R.id.guessTheCountrySpinner);
@@ -66,6 +67,7 @@ public class GuessTheCountryActivity extends AppCompatActivity {
                     checkAnswer(countriesSpinner.getSelectedItem().toString());
                     // next i need to change text in button to Next, and set isAnswered to true
                     isAnswered = true;
+                    countriesSpinner.setEnabled(false);
                     submitOrNextBtn.setText("Next");
                 }
 
@@ -82,11 +84,12 @@ public class GuessTheCountryActivity extends AppCompatActivity {
 
     private void gameRefresh(){
         // clear warnings
-        this.correctAnswerTextView.setText("");
-        this.warningTextView.setText("");
+        this.answerLabelTextView.setText("");
+
 
         // reset isAnswered
         isAnswered = false;
+        countriesSpinner.setEnabled(true);
 
         // reset Button back to submit
         submitOrNextBtn.setText("Submit");
@@ -103,10 +106,17 @@ public class GuessTheCountryActivity extends AppCompatActivity {
 
     private void checkAnswer(String answer){
         // if correct - display green
-         if (Objects.equals(this.correctAnswer, answer)) correctAnswerTextView.setText("That is the correct Answer!!");
+         if (Objects.equals(this.correctAnswer, answer)) {
+             answerLabelTextView.setText("That is the correct Answer!!");
+             answerLabelTextView.setTextColor(Color.parseColor(GREEN));
+         }
 
         // if not - display red and correct answer
-        else warningTextView.setText("Incorect: The Answer is " + this.correctAnswer);
+
+        else {
+            answerLabelTextView.setText("Incorect: The Answer is " + this.correctAnswer);
+            answerLabelTextView.setTextColor(Color.parseColor(RED));
+        }
 
     }
 }
