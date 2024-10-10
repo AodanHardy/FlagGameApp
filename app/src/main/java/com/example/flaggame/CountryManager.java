@@ -7,22 +7,39 @@ import java.util.List;
 import java.util.Random;
 
 
+/**
+ * The type Country manager.
+ */
 public class CountryManager {
     private final Context context;
-    private List<Country> countries;
+    private final List<Country> countries;
     private final Random random = new Random();
 
+    /**
+     * Instantiates a new Country manager.
+     *
+     * @param context the context
+     */
     public CountryManager(Context context) {
         this.context = context;
         this.countries = getCountries();
     }
 
-
-    public Country getRandomCountry() {
+    /**
+     * Get random Country.
+     * @return a random country from list of countries.
+     */
+    private Country getRandomCountry() {
         int randomIndex = random.nextInt(countries.size());
         return countries.get(randomIndex);
     }
 
+    /**
+     * Get random list list.
+     *
+     * @param numberOfCountries the number of countries
+     * @return the list
+     */
     public List<Country> getRandomList(int numberOfCountries){
         List<Country> randCountries = new ArrayList<>();
 
@@ -36,6 +53,11 @@ public class CountryManager {
         return randCountries;
     }
 
+    /**
+     * Get country names list.
+     *
+     * @return the list
+     */
     public List<String> getCountryNames(){
         List<String> names = new ArrayList<>();
         for (Country country : this.countries){
@@ -43,6 +65,11 @@ public class CountryManager {
         }
         return names;
     }
+
+    /**
+     * Get Countries used to populate list of countries.
+     * @return list of countries
+     */
 
     private List<Country> getCountries(){
         List<Country> fetchedCounties = new ArrayList<>();

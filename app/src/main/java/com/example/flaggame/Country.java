@@ -2,28 +2,50 @@ package com.example.flaggame;
 
 import android.content.Context;
 
+/**
+ * The type Country.
+ */
 public class Country {
-    private String name;
-    private int imageInt;
-    private Context context;
+    private final String name;
+    private final int imageInt;
+    private final Context context;
 
+    /**
+     * Instantiates a new Country.
+     *
+     * @param context  the context
+     * @param imageInt the image int
+     */
     public Country(Context context, int imageInt) {
         this.context = context;
         this.imageInt = imageInt;
         this.name = this.getName();
     }
 
+    /**
+     * Gets the Country Name from the resource name.
+     */
     private String getName() {
-        String resourceName = context.getResources().getResourceEntryName(imageInt);
+        String resourceName = context.getResources().getResourceEntryName(this.imageInt);
         return resourceName.replace("flag_of_", "").toUpperCase();
     }
 
+    /**
+     * Gets country name.
+     *
+     * @return the country name
+     */
     public String getCountryName() {
-        return name;
+        return this.name;
     }
 
+    /**
+     * Gets image int.
+     *
+     * @return the image int
+     */
     public int getImageInt() {
-        return imageInt;
+        return this.imageInt;
     }
 }
 
