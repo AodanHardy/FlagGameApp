@@ -1,9 +1,12 @@
 package com.example.flaggame;
 
+import static com.example.flaggame.Constants.GREEN;
 import static com.example.flaggame.Constants.NUM_OF_COUNTRIES;
+import static com.example.flaggame.Constants.RED;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,16 +20,10 @@ public class GuessHintsActivity extends AppCompatActivity {
     CountryManager countryManager;
     private List<Country> countryList;
     private ImageView flagImage;
-    private TextView guessTextView;
-    private TextView livesTextView;
-    private TextView failedMsgTextView;
-    private TextView successMsgTextView;
+    private TextView guessTextView, livesTextView;
+    private TextView msgTextView;
     private Button submitBtn;
     private EditText guessField;
-
-
-
-
     private String roundCountryName;
     private String guessedCountryName;
     private int lives;
@@ -46,8 +43,7 @@ public class GuessHintsActivity extends AppCompatActivity {
         this.submitBtn = findViewById(R.id.guessHintSubmitbtn);
         this.guessField = findViewById(R.id.guessHintTextField);
         this.livesTextView = findViewById(R.id.guessHintsLivesTxt);
-        this.failedMsgTextView = findViewById(R.id.guessedHintFailedMsgTxt);
-        this.successMsgTextView = findViewById(R.id.guessedHintSuccessMsgTxt);
+        this.msgTextView = findViewById(R.id.guessedHintMsgTxt);
 
 
         this.newRoundRefresh();
@@ -111,8 +107,7 @@ public class GuessHintsActivity extends AppCompatActivity {
         submitBtn.setText("Submit");
 
         //reset messages
-        this.failedMsgTextView.setText("");
-        this.successMsgTextView.setText("");
+        this.msgTextView.setText("");
 
         this.roundCountryName = roundCountry.getCountryName();
         this.guessedCountryName = getEmptyCountryName();
@@ -180,7 +175,8 @@ public class GuessHintsActivity extends AppCompatActivity {
     }
 
     private void fail(){
-        this.failedMsgTextView.setText("WRONG! The correct answer is " + roundCountryName);
+        this.msgTextView.setTextColor(Color.parseColor(RED));
+        this.msgTextView.setText("WRONG! The correct answer is " + roundCountryName);
 
     }
 
@@ -189,7 +185,8 @@ public class GuessHintsActivity extends AppCompatActivity {
     }
 
     private void win(){
-        this.successMsgTextView.setText("CORRECT! YOU WIN!");
+        this.msgTextView.setTextColor(Color.parseColor(GREEN));
+        this.msgTextView.setText("CORRECT! YOU WIN!");
     }
     private void finishRound(){
         guessField.setEnabled(false);

@@ -77,25 +77,16 @@
         app:layout_constraintVertical_bias="0.227" />
 
     <TextView
-        android:id="@+id/guessedHintFailedMsgTxt"
+        android:id="@+id/guessedHintMsgTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#DE0E0E"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/guessedHintSuccessMsgTxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guessHintSubmitbtn" />
-
-    <TextView
-        android:id="@+id/guessedHintSuccessMsgTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#4CAF50"
+        android:layout_marginTop="48dp"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guessHintSubmitbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/guessHintSubmitbtn"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
