@@ -21,6 +21,9 @@ import java.util.Objects;
 
 
 public class GuessTheCountryActivity extends AppCompatActivity {
+    private static final String
+            WIN_MSG = "That is the correct Answer!!",
+            LOSE_MSG = "Incorect: The Answer is ";
     private String correctAnswer;
     private boolean isAnswered = false;
     private List<Country> randomOrderCountryList;
@@ -118,14 +121,14 @@ public class GuessTheCountryActivity extends AppCompatActivity {
     private void checkAnswer(String answer){
         // if correct - display green
          if (Objects.equals(this.correctAnswer, answer)) {
-             answerLabelTextView.setText("That is the correct Answer!!");
+             answerLabelTextView.setText(WIN_MSG);
              answerLabelTextView.setTextColor(Color.parseColor(GREEN));
          }
 
         // if not - display red and correct answer
 
         else {
-            answerLabelTextView.setText("Incorect: The Answer is " + this.correctAnswer);
+            answerLabelTextView.setText(LOSE_MSG + this.correctAnswer);
             answerLabelTextView.setTextColor(Color.parseColor(RED));
         }
 

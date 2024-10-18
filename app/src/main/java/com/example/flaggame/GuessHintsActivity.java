@@ -18,6 +18,13 @@ import android.widget.TextView;
 import java.util.List;
 
 public class GuessHintsActivity extends AppCompatActivity {
+    private static final String
+            PLACEHOLDER = "-",
+            FAIL_MSG = "WRONG!",
+            WIN_MSG = "CORRECT! YOU WIN!",
+            CORRECT_ANS_MSG = "The correct answer is ";
+    private static final int NUM_OF_LIVES = 3;
+
     CountryManager countryManager;
     private List<Country> countryList;
     private ImageView flagImage;
@@ -78,7 +85,7 @@ public class GuessHintsActivity extends AppCompatActivity {
                             win();
                             finishRound();
                         }
-                    }
+                }
                     else {
                         // if bad guess, take away life and tell user
                         lives--;
@@ -95,7 +102,7 @@ public class GuessHintsActivity extends AppCompatActivity {
 
     private void newRoundRefresh(){
         Country roundCountry = countryList.get(0);
-        this.lives = 3;
+        this.lives = NUM_OF_LIVES;
         this.roundFinished = false;
         guessField.setEnabled(true);
 
@@ -119,7 +126,7 @@ public class GuessHintsActivity extends AppCompatActivity {
     }
 
     private String getEmptyCountryName(){
-        char template = '-';
+        char template = PLACEHOLDER.charAt(0);
         StringBuilder fullTemplate = new StringBuilder();
 
         for (int i = 0; i < this.roundCountryName.length(); i++ )
@@ -178,8 +185,8 @@ public class GuessHintsActivity extends AppCompatActivity {
 
     private void fail(){
         this.msgTextView.setTextColor(Color.parseColor(RED));
-        this.msgTextView.setText("WRONG!");
-        this.correctAnsMsgTextView.setText("The correct answer is " + roundCountryName);
+        this.msgTextView.setText(FAIL_MSG);
+        this.correctAnsMsgTextView.setText(CORRECT_ANS_MSG + roundCountryName);
 
     }
 
@@ -189,7 +196,7 @@ public class GuessHintsActivity extends AppCompatActivity {
 
     private void win(){
         this.msgTextView.setTextColor(Color.parseColor(GREEN));
-        this.msgTextView.setText("CORRECT! YOU WIN!");
+        this.msgTextView.setText(WIN_MSG);
     }
     private void finishRound(){
         guessField.setEnabled(false);

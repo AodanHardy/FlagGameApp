@@ -27,6 +27,9 @@ public class Constants {
      */
     public static final String GREEN = "#008000";
 
+    /**
+     * The constant BLUE.
+     */
     public static final String BLUE = "#0000ff";
 
 

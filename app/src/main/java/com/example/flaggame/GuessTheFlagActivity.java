@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 public class GuessTheFlagActivity extends AppCompatActivity {
+    private static final String WIN_MSG = "CORRECT!", FAIL_MSG = "WRONG!";
     private List<Country> countryList;
     private Country correctCountry;
     private CountryManager countryManager;
@@ -120,11 +121,11 @@ public class GuessTheFlagActivity extends AppCompatActivity {
     private void checkAnswer(Country guessedCountry){
         if (guessedCountry.equals(this.correctCountry)){
             this.msgTextView.setTextColor(Color.parseColor(GREEN));
-            this.msgTextView.setText("CORRECT!");
+            this.msgTextView.setText(WIN_MSG);
         }
         else {
             this.msgTextView.setTextColor(Color.parseColor(RED));
-            this.msgTextView.setText("WRONG!");
+            this.msgTextView.setText(FAIL_MSG);
         }
     }
 }

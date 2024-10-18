@@ -20,7 +20,12 @@ import android.widget.TextView;
 import java.util.List;
 
 public class AdvancedLevelActivity extends AppCompatActivity {
-    public static final int NUM_ALLOWED_ATTEMPTS = 3;
+    private static final int NUM_ALLOWED_ATTEMPTS = 3;
+    private static final String
+            WIN_MSG = "CORRECT!!",
+            FAIL_MSG = "INCORRECT!!",
+            TOO_MANY_ATTEMPTS_MSG = "Too Many Incorrect Attempts",
+            SCORE_SUMMARY_MSG = "Your Score is: ";
     private CountryManager countryManager;
     private ImageView image1, image2, image3;
     private EditText textBox1, textBox2,textBox3;
@@ -72,7 +77,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
                 else {
                     if (roundAttempts == NUM_ALLOWED_ATTEMPTS) {
                         // give warning that round is over
-                        completeRound("Too Many Incorect Attempts", RED);
+                        completeRound(TOO_MANY_ATTEMPTS_MSG, RED);
 
                     } else {
                         // check answers
@@ -85,9 +90,9 @@ public class AdvancedLevelActivity extends AppCompatActivity {
                         // roundComplete = false, display message and restart game
                         if (q1Correct && q2Correct && q3Correct) {
                             // put this in a method
-                            completeRound("CORRECT!!", GREEN);
+                            completeRound(WIN_MSG, GREEN);
                         } else {
-                            correctTxt.setText("INCORRECT!");
+                            correctTxt.setText(FAIL_MSG);
                             correctTxt.setTextColor(Color.parseColor(RED));
                             roundAttempts++;
                         }
@@ -157,7 +162,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
 
         isRoundComplete = true;
         submitBtn.setText("Next");
-        scoreTxt.setText("Your Score is: " + this.roundScore);
+        scoreTxt.setText(SCORE_SUMMARY_MSG + this.roundScore);
         correctTxt.setText(message);
         correctTxt.setTextColor(Color.parseColor(colour));
     }
