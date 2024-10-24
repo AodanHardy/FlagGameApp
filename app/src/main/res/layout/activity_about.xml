@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".AboutActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/aboutIdTxt"
+        android:textColor="@color/label_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
         android:layout_marginBottom="56dp"
         android:text="StudentID: B00826427"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/aboutNameTxt"
+        app:layout_constraintStart_toStartOf="@+id/aboutNameTxt" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/aboutNameTxt"
+        android:textColor="@color/label_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="StudentName: Aodan Hardy"
@@ -29,6 +32,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:width="@dimen/submit_button_width"
+        android:textSize="@dimen/button_text_size"
+        android:textColor="@color/button_text"
+        app:backgroundTint="@color/button"
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
