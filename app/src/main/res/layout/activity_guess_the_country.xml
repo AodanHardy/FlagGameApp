@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".GuessTheCountryActivity">
 
     <ImageView
@@ -18,6 +19,12 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
+
+        android:width="@dimen/submit_button_width"
+        android:textSize="@dimen/button_text_size"
+        android:textColor="@color/button_text"
+        app:backgroundTint="@color/button"
+
         android:id="@+id/guessTheCountrySubmitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,6 +36,10 @@
         app:layout_constraintTop_toBottomOf="@+id/guessTheCountryCorrectAnswerTextView" />
 
     <Spinner
+
+        android:popupBackground="@color/spinner_background"
+        android:background="@color/spinner_background"
+
         android:id="@+id/guessTheCountrySpinner"
         android:layout_width="301dp"
         android:layout_height="82dp"
