@@ -4,48 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".NewCountryGameActivity">
 
     <Button
+
         android:id="@+id/guessTheCountryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="201dp"
+
+        android:width="@dimen/button_width"
         android:text="Guess The Country"
-        app:layout_constraintBottom_toTopOf="@+id/guessHintsBtn"
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/button_text_size"
+        app:backgroundTint="@color/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+
         android:id="@+id/guessHintsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="37dp"
+
+        android:layout_marginTop="36dp"
+        android:width="@dimen/button_width"
         android:text="Guess-Hints"
-        app:layout_constraintBottom_toTopOf="@+id/guessTheFlagBtn"
-        app:layout_constraintStart_toStartOf="@+id/guessTheFlagBtn" />
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/button_text_size"
+        app:backgroundTint="@color/button"
+        app:layout_constraintStart_toStartOf="@+id/guessTheCountryBtn"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheCountryBtn" />
 
     <Button
+
         android:id="@+id/guessTheFlagBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="36dp"
+
+        android:width="@dimen/button_width"
         android:text="Guess The Flag"
-        app:layout_constraintBottom_toTopOf="@+id/advancedLevelBtn"
-        app:layout_constraintStart_toStartOf="@+id/advancedLevelBtn" />
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/button_text_size"
+        app:backgroundTint="@color/button"
+        app:layout_constraintStart_toStartOf="@+id/guessHintsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/guessHintsBtn" />
+
 
     <Button
+
         android:id="@+id/advancedLevelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="206dp"
-        android:text="Advanced Level"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="37dp"
 
+        android:width="@dimen/button_width"
+        android:text="Advanced Level"
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/button_text_size"
+        app:backgroundTint="@color/button"
+        app:layout_constraintStart_toStartOf="@+id/guessTheFlagBtn"
+        app:layout_constraintTop_toBottomOf="@+id/guessTheFlagBtn" />
 
     <Button
         android:id="@+id/newCountryBackBtn"
