@@ -115,9 +115,9 @@ public class AdvancedLevelActivity extends AppCompatActivity {
         // reset editText fields, text and colours
         textBox1.setEnabled(true);textBox2.setEnabled(true);textBox3.setEnabled(true);
         textBox1.setText("");textBox2.setText("");textBox3.setText("");
-        textBox1.setTextColor(Color.parseColor(BLACK));
-        textBox2.setTextColor(Color.parseColor(BLACK));
-        textBox3.setTextColor(Color.parseColor(BLACK));
+        textBox1.setTextColor(Color.parseColor(GREY));
+        textBox2.setTextColor(Color.parseColor(GREY));
+        textBox3.setTextColor(Color.parseColor(GREY));
 
         correctTxt.setText("");
         scoreTxt.setText("");

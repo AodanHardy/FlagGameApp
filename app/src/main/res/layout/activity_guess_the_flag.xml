@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".GuessTheFlagActivity">
 
     <ImageView
@@ -52,6 +53,7 @@
         android:layout_marginBottom="258dp"
         android:text="county"
         android:textSize="32sp"
+        android:textColor="@color/label_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
@@ -60,6 +62,12 @@
         app:layout_constraintVertical_bias="0.567" />
 
     <Button
+
+        android:width="@dimen/submit_button_width"
+        android:textSize="@dimen/button_text_size"
+        android:textColor="@color/button_text"
+        app:backgroundTint="@color/button"
+
         android:id="@+id/guessTheFlagNextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +83,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:textColor="#4CAF50"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/guessTheFlagNextBtn"
         app:layout_constraintEnd_toEndOf="parent"

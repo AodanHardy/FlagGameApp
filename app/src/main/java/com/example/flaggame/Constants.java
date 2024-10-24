@@ -17,11 +17,12 @@ public class Constants {
     /**
      * The constant GREY.
      */
-    public static final String GREY = "#808080";
+    public static final String GREY = "#A7A7A7";
     /**
      * The constant BLACK.
      */
     public static final String BLACK = "#000000";
+
     /**
      * The constant GREEN.
      */
@@ -30,7 +31,7 @@ public class Constants {
     /**
      * The constant BLUE.
      */
-    public static final String BLUE = "#0000ff";
+    public static final String BLUE = "#3F51B5";
 
 
 
