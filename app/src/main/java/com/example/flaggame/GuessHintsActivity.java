@@ -191,7 +191,7 @@ public class GuessHintsActivity extends AppCompatActivity {
     }
 
     private boolean checkIfWon() {
-        return !guessedCountryName.contains("-");
+        return !guessedCountryName.contains(PLACEHOLDER);
     }
 
     private void win(){
